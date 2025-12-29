@@ -4,8 +4,8 @@ import Adw from 'gi://Adw';
 
 import { ExtensionPreferences } from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
-const ICON_SIZES = [16, 24, 32, 40, 48, 56, 64, 72, 80, 96, 112, 128];
-const PADDINGS = [0, 4, 8, 12, 16, 20, 24, 28, 32];
+const ICON_SIZES = [24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80];
+const PADDINGS = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32];
 
 export default class DashIconSizePreferences extends ExtensionPreferences {
     fillPreferencesWindow(window) {
@@ -24,7 +24,7 @@ export default class DashIconSizePreferences extends ExtensionPreferences {
         const adjustmentIconSize = new Gtk.Adjustment({
             lower: ICON_SIZES[0],
             upper: ICON_SIZES[ICON_SIZES.length - 1],
-            step_increment: 8,
+            step_increment: 2,
         });
 
         const iconSizeRow = new Adw.SpinRow({
@@ -39,7 +39,7 @@ export default class DashIconSizePreferences extends ExtensionPreferences {
         const adjustmentPadding = new Gtk.Adjustment({
             lower: PADDINGS[0],
             upper: PADDINGS[PADDINGS.length - 1],
-            step_increment: 4,
+            step_increment: 2,
         });
 
         const paddingRow = new Adw.SpinRow({
