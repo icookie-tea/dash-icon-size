@@ -1,0 +1,95 @@
+/*
+    Dash Icon Size - GNOME Shell 46+ extension
+    Copyright @icookie 2025 - License GPL v3
+*/
+
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+
+import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
+
+
+const ICON_SIZES = [16, 24, 32, 40, 48, 56, 64, 72, 80, 96, 112, 128];
+const PADDINGS = [0, 4, 8, 12, 16, 20, 24, 28, 32];
+
+const DashStyle = class {
+    constructor(settings) {
+        this._settings = settings;
+        this._uiGroup = Main.layoutManager.uiGroup;
+        this._settingsId = null;
+
+        this._applySettings();
+    }
+
+    _applySettings() {
+        // Remove old classes
+        ICON_SIZES.forEach(size => {
+            this._uiGroup.remove_style_class_name(`dash-icon-size-icon${size}`);
+        });
+        PADDINGS.forEach(padding => {
+            this._uiGroup.remove_style_class_name(`dash-icon-size-padding${padding}`);
+        });
+
+        // Add new classes based on settings
+        const iconSize = this._settings.get_int('icon-size');
+        const padding = this._settings.get_int('dash-padding');
+
+        // Find nearest valid size
+        const validSize = ICON_SIZES.reduce((prev, curr) =>
+            Math.abs(curr - iconSize) < Math.abs(prev - iconSize) ? curr : prev
+        );
+
+        // Find nearest valid padding
+        const validPadding = PADDINGS.reduce((prev, curr) =>
+            Math.abs(curr - padding) < Math.abs(prev - padding) ? curr : prev
+        );
+
+        this._uiGroup.add_style_class_name(`dash-icon-size-icon${validSize}`);
+        this._uiGroup.add_style_class_name(`dash-icon-size-padding${validPadding}`);
+    }
+
+    enable() {
+        this._settingsId = this._settings.connect('changed', () => this._applySettings());
+    }
+
+    destroy() {
+        if (this._settingsId) {
+            this._settings.disconnect(this._settingsId);
+            this._settingsId = null;
+        }
+
+        // Remove all classes
+        ICON_SIZES.forEach(size => {
+            this._uiGroup.remove_style_class_name(`dash-icon-size-icon${size}`);
+        });
+        PADDINGS.forEach(padding => {
+            this._uiGroup.remove_style_class_name(`dash-icon-size-padding${padding}`);
+        });
+    }
+};
+
+export default class DashIconSizeExtension extends Extension {
+    constructor(metadata) {
+        super(metadata);
+    }
+
+    enable() {
+        if (Main.layoutManager._startingUp) {
+            Main.layoutManager.connectOnce('startup-complete', () => this._initDash());
+        } else {
+            this._initDash();
+        }
+    }
+
+    _initDash() {
+        this._settings = this.getSettings();
+        this._dashStyle = new DashStyle(this._settings);
+        this._dashStyle.enable();
+    }
+
+    disable() {
+        this._dashStyle?.destroy();
+        this._dashStyle = null;
+        this._settings = null;
+        Main.layoutManager.disconnectObject(this);
+    }
+}

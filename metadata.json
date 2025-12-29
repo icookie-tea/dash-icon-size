@@ -1,0 +1,14 @@
+{
+  "description": "Adjust dash icon size and padding.",
+  "name": "Dash Icon Size",
+  "shell-version": [
+    "46",
+    "47",
+    "48",
+    "49"
+  ],
+  "url": "https://github.com/icookie/dash-icon-size",
+  "uuid": "dash-icon-size@icookie",
+  "settings-schema": "org.gnome.shell.extensions.dash-icon-size",
+  "version": 1
+}

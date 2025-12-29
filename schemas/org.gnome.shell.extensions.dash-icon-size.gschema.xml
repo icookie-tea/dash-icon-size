@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schemalist>
+    <schema path="/org/gnome/shell/extensions/dash-icon-size/" id="org.gnome.shell.extensions.dash-icon-size">
+
+    <key type="i" name="icon-size">
+        <default>64</default>
+        <summary>Dash icon size</summary>
+        <description>Size of the dash icons in pixels (available: 16, 24, 32, 40, 48, 56, 64, 72, 80, 96, 112, 128)</description>
+    </key>
+
+    <key type="i" name="dash-padding">
+        <default>8</default>
+        <summary>Dash padding</summary>
+        <description>Padding around the dash in pixels (available: 0, 4, 8, 12, 16, 20, 24, 28, 32)</description>
+    </key>
+
+    </schema>
+</schemalist>
