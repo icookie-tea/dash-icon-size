@@ -6,13 +6,13 @@
     <key type="i" name="icon-size">
         <default>64</default>
         <summary>Dash icon size</summary>
-        <description>Size of the dash icons in pixels (available: 16, 24, 32, 40, 48, 56, 64, 72, 80, 96, 112, 128)</description>
+        <description>Size of the dash icons in pixels (available: 24-80, step 2)</description>
     </key>
 
     <key type="i" name="dash-padding">
         <default>8</default>
         <summary>Dash padding</summary>
-        <description>Padding around the dash in pixels (available: 0, 4, 8, 12, 16, 20, 24, 28, 32)</description>
+        <description>Padding around the dash in pixels (available: 0-32, step 2)</description>
     </key>
 
     </schema>

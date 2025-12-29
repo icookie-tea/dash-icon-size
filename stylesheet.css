@@ -1,26 +1,51 @@
 /* Dash Icon Size - Dash styling */
 
 /* Dash icon sizes */
-.dash-icon-size-icon16 #dash StIcon { height: 16px; width: 16px; }
 .dash-icon-size-icon24 #dash StIcon { height: 24px; width: 24px; }
+.dash-icon-size-icon26 #dash StIcon { height: 26px; width: 26px; }
+.dash-icon-size-icon28 #dash StIcon { height: 28px; width: 28px; }
+.dash-icon-size-icon30 #dash StIcon { height: 30px; width: 30px; }
 .dash-icon-size-icon32 #dash StIcon { height: 32px; width: 32px; }
+.dash-icon-size-icon34 #dash StIcon { height: 34px; width: 34px; }
+.dash-icon-size-icon36 #dash StIcon { height: 36px; width: 36px; }
+.dash-icon-size-icon38 #dash StIcon { height: 38px; width: 38px; }
 .dash-icon-size-icon40 #dash StIcon { height: 40px; width: 40px; }
+.dash-icon-size-icon42 #dash StIcon { height: 42px; width: 42px; }
+.dash-icon-size-icon44 #dash StIcon { height: 44px; width: 44px; }
+.dash-icon-size-icon46 #dash StIcon { height: 46px; width: 46px; }
 .dash-icon-size-icon48 #dash StIcon { height: 48px; width: 48px; }
+.dash-icon-size-icon50 #dash StIcon { height: 50px; width: 50px; }
+.dash-icon-size-icon52 #dash StIcon { height: 52px; width: 52px; }
+.dash-icon-size-icon54 #dash StIcon { height: 54px; width: 54px; }
 .dash-icon-size-icon56 #dash StIcon { height: 56px; width: 56px; }
+.dash-icon-size-icon58 #dash StIcon { height: 58px; width: 58px; }
+.dash-icon-size-icon60 #dash StIcon { height: 60px; width: 60px; }
+.dash-icon-size-icon62 #dash StIcon { height: 62px; width: 62px; }
 .dash-icon-size-icon64 #dash StIcon { height: 64px; width: 64px; }
+.dash-icon-size-icon66 #dash StIcon { height: 66px; width: 66px; }
+.dash-icon-size-icon68 #dash StIcon { height: 68px; width: 68px; }
+.dash-icon-size-icon70 #dash StIcon { height: 70px; width: 70px; }
 .dash-icon-size-icon72 #dash StIcon { height: 72px; width: 72px; }
+.dash-icon-size-icon74 #dash StIcon { height: 74px; width: 74px; }
+.dash-icon-size-icon76 #dash StIcon { height: 76px; width: 76px; }
+.dash-icon-size-icon78 #dash StIcon { height: 78px; width: 78px; }
 .dash-icon-size-icon80 #dash StIcon { height: 80px; width: 80px; }
-.dash-icon-size-icon96 #dash StIcon { height: 96px; width: 96px; }
-.dash-icon-size-icon112 #dash StIcon { height: 112px; width: 112px; }
-.dash-icon-size-icon128 #dash StIcon { height: 128px; width: 128px; }
 
 /* Dash padding */
 .dash-icon-size-padding0 #dash .dash-background { padding: 0px; }
+.dash-icon-size-padding2 #dash .dash-background { padding: 2px; }
 .dash-icon-size-padding4 #dash .dash-background { padding: 4px; }
+.dash-icon-size-padding6 #dash .dash-background { padding: 6px; }
 .dash-icon-size-padding8 #dash .dash-background { padding: 8px; }
+.dash-icon-size-padding10 #dash .dash-background { padding: 10px; }
 .dash-icon-size-padding12 #dash .dash-background { padding: 12px; }
+.dash-icon-size-padding14 #dash .dash-background { padding: 14px; }
 .dash-icon-size-padding16 #dash .dash-background { padding: 16px; }
+.dash-icon-size-padding18 #dash .dash-background { padding: 18px; }
 .dash-icon-size-padding20 #dash .dash-background { padding: 20px; }
+.dash-icon-size-padding22 #dash .dash-background { padding: 22px; }
 .dash-icon-size-padding24 #dash .dash-background { padding: 24px; }
+.dash-icon-size-padding26 #dash .dash-background { padding: 26px; }
 .dash-icon-size-padding28 #dash .dash-background { padding: 28px; }
+.dash-icon-size-padding30 #dash .dash-background { padding: 30px; }
 .dash-icon-size-padding32 #dash .dash-background { padding: 32px; }

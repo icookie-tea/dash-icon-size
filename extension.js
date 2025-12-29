@@ -8,8 +8,8 @@ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
 
 
-const ICON_SIZES = [16, 24, 32, 40, 48, 56, 64, 72, 80, 96, 112, 128];
-const PADDINGS = [0, 4, 8, 12, 16, 20, 24, 28, 32];
+const ICON_SIZES = [24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80];
+const PADDINGS = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32];
 
 const DashStyle = class {
     constructor(settings) {
