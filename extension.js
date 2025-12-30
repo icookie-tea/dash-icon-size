@@ -74,7 +74,11 @@ export default class DashIconSizeExtension extends Extension {
 
     enable() {
         if (Main.layoutManager._startingUp) {
-            Main.layoutManager.connectOnce('startup-complete', () => this._initDash());
+            this._startupCompleteId = Main.layoutManager.connect('startup-complete', () => {
+                this._initDash();
+                Main.layoutManager.disconnect(this._startupCompleteId);
+                this._startupCompleteId = null;
+            });
         } else {
             this._initDash();
         }
@@ -90,6 +94,10 @@ export default class DashIconSizeExtension extends Extension {
         this._dashStyle?.destroy();
         this._dashStyle = null;
         this._settings = null;
+        if (this._startupCompleteId) {
+            Main.layoutManager.disconnect(this._startupCompleteId);
+            this._startupCompleteId = null;
+        }
         Main.layoutManager.disconnectObject(this);
     }
 }
