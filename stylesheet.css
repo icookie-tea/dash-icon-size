@@ -49,3 +49,43 @@
 .dash-icon-size-padding28 #dash .dash-background { padding: 28px; }
 .dash-icon-size-padding30 #dash .dash-background { padding: 30px; }
 .dash-icon-size-padding32 #dash .dash-background { padding: 32px; }
+
+/* Dash border radius */
+.dash-icon-size-radius0 #dash .dash-background { border-radius: 0px !important; }
+.dash-icon-size-radius2 #dash .dash-background { border-radius: 2px !important; }
+.dash-icon-size-radius4 #dash .dash-background { border-radius: 4px !important; }
+.dash-icon-size-radius6 #dash .dash-background { border-radius: 6px !important; }
+.dash-icon-size-radius8 #dash .dash-background { border-radius: 8px !important; }
+.dash-icon-size-radius10 #dash .dash-background { border-radius: 10px !important; }
+.dash-icon-size-radius12 #dash .dash-background { border-radius: 12px !important; }
+.dash-icon-size-radius14 #dash .dash-background { border-radius: 14px !important; }
+.dash-icon-size-radius16 #dash .dash-background { border-radius: 16px !important; }
+.dash-icon-size-radius18 #dash .dash-background { border-radius: 18px !important; }
+.dash-icon-size-radius20 #dash .dash-background { border-radius: 20px !important; }
+.dash-icon-size-radius22 #dash .dash-background { border-radius: 22px !important; }
+.dash-icon-size-radius24 #dash .dash-background { border-radius: 24px !important; }
+.dash-icon-size-radius26 #dash .dash-background { border-radius: 26px !important; }
+.dash-icon-size-radius28 #dash .dash-background { border-radius: 28px !important; }
+.dash-icon-size-radius30 #dash .dash-background { border-radius: 30px !important; }
+.dash-icon-size-radius32 #dash .dash-background { border-radius: 32px !important; }
+
+/* Running dot position adjustment based on padding */
+/* Use offset-y to position the running dot (negative value moves dot up from bottom) */
+/* Note: GNOME Shell uses offset-y, not margin-bottom, for running dot positioning */
+.dash-icon-size-padding0 #dash .app-grid-running-dot { offset-y: -0px !important; }
+.dash-icon-size-padding2 #dash .app-grid-running-dot { offset-y: -2px !important; }
+.dash-icon-size-padding4 #dash .app-grid-running-dot { offset-y: -4px !important; }
+.dash-icon-size-padding6 #dash .app-grid-running-dot { offset-y: -6px !important; }
+.dash-icon-size-padding8 #dash .app-grid-running-dot { offset-y: -8px !important; }
+.dash-icon-size-padding10 #dash .app-grid-running-dot { offset-y: -10px !important; }
+.dash-icon-size-padding12 #dash .app-grid-running-dot { offset-y: -12px !important; }
+.dash-icon-size-padding14 #dash .app-grid-running-dot { offset-y: -14px !important; }
+.dash-icon-size-padding16 #dash .app-grid-running-dot { offset-y: -16px !important; }
+.dash-icon-size-padding18 #dash .app-grid-running-dot { offset-y: -18px !important; }
+.dash-icon-size-padding20 #dash .app-grid-running-dot { offset-y: -20px !important; }
+.dash-icon-size-padding22 #dash .app-grid-running-dot { offset-y: -22px !important; }
+.dash-icon-size-padding24 #dash .app-grid-running-dot { offset-y: -24px !important; }
+.dash-icon-size-padding26 #dash .app-grid-running-dot { offset-y: -26px !important; }
+.dash-icon-size-padding28 #dash .app-grid-running-dot { offset-y: -28px !important; }
+.dash-icon-size-padding30 #dash .app-grid-running-dot { offset-y: -30px !important; }
+.dash-icon-size-padding32 #dash .app-grid-running-dot { offset-y: -32px !important; }

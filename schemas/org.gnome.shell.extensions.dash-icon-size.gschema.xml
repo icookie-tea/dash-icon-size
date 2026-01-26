@@ -15,5 +15,11 @@
         <description>Padding around the dash in pixels (available: 0-32, step 2)</description>
     </key>
 
+    <key type="i" name="dash-radius">
+        <default>24</default>
+        <summary>Dash border radius</summary>
+        <description>Border radius of the dash background in pixels (available: 0-32, step 2)</description>
+    </key>
+
     </schema>
 </schemalist>
