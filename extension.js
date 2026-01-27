@@ -7,10 +7,7 @@ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
 import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
 
-
-const ICON_SIZES = [24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80];
-const PADDINGS = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32];
-const RADII = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32];
+import { ICON_SIZES, PADDINGS, RADII, STYLE_CLASSES } from './constants.js';
 
 const DashStyle = class {
     constructor(settings) {
@@ -21,41 +18,39 @@ const DashStyle = class {
         this._applySettings();
     }
 
-    _applySettings() {
-        // Remove old classes
+    _clearAllStyleClasses() {
         ICON_SIZES.forEach(size => {
-            this._uiGroup.remove_style_class_name(`dash-icon-size-icon${size}`);
+            this._uiGroup.remove_style_class_name(`${STYLE_CLASSES.ICON}${size}`);
         });
         PADDINGS.forEach(padding => {
-            this._uiGroup.remove_style_class_name(`dash-icon-size-padding${padding}`);
+            this._uiGroup.remove_style_class_name(`${STYLE_CLASSES.PADDING}${padding}`);
         });
         RADII.forEach(radius => {
-            this._uiGroup.remove_style_class_name(`dash-icon-size-radius${radius}`);
+            this._uiGroup.remove_style_class_name(`${STYLE_CLASSES.RADIUS}${radius}`);
         });
+    }
+
+    _findNearestValidValue(value, validValues) {
+        return validValues.reduce((prev, curr) =>
+            Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev
+        );
+    }
+
+    _applySettings() {
+        this._clearAllStyleClasses();
 
         // Add new classes based on settings
         const iconSize = this._settings.get_int('icon-size');
         const padding = this._settings.get_int('dash-padding');
         const radius = this._settings.get_int('dash-radius');
 
-        // Find nearest valid size
-        const validSize = ICON_SIZES.reduce((prev, curr) =>
-            Math.abs(curr - iconSize) < Math.abs(prev - iconSize) ? curr : prev
-        );
+        const validSize = this._findNearestValidValue(iconSize, ICON_SIZES);
+        const validPadding = this._findNearestValidValue(padding, PADDINGS);
+        const validRadius = this._findNearestValidValue(radius, RADII);
 
-        // Find nearest valid padding
-        const validPadding = PADDINGS.reduce((prev, curr) =>
-            Math.abs(curr - padding) < Math.abs(prev - padding) ? curr : prev
-        );
-
-        // Find nearest valid radius
-        const validRadius = RADII.reduce((prev, curr) =>
-            Math.abs(curr - radius) < Math.abs(prev - radius) ? curr : prev
-        );
-
-        this._uiGroup.add_style_class_name(`dash-icon-size-icon${validSize}`);
-        this._uiGroup.add_style_class_name(`dash-icon-size-padding${validPadding}`);
-        this._uiGroup.add_style_class_name(`dash-icon-size-radius${validRadius}`);
+        this._uiGroup.add_style_class_name(`${STYLE_CLASSES.ICON}${validSize}`);
+        this._uiGroup.add_style_class_name(`${STYLE_CLASSES.PADDING}${validPadding}`);
+        this._uiGroup.add_style_class_name(`${STYLE_CLASSES.RADIUS}${validRadius}`);
     }
 
     enable() {
@@ -68,16 +63,7 @@ const DashStyle = class {
             this._settingsId = null;
         }
 
-        // Remove all classes
-        ICON_SIZES.forEach(size => {
-            this._uiGroup.remove_style_class_name(`dash-icon-size-icon${size}`);
-        });
-        PADDINGS.forEach(padding => {
-            this._uiGroup.remove_style_class_name(`dash-icon-size-padding${padding}`);
-        });
-        RADII.forEach(radius => {
-            this._uiGroup.remove_style_class_name(`dash-icon-size-radius${radius}`);
-        });
+        this._clearAllStyleClasses();
     }
 };
 
