@@ -73,15 +73,7 @@ export default class DashIconSizeExtension extends Extension {
     }
 
     enable() {
-        if (Main.layoutManager._startingUp) {
-            this._startupCompleteId = Main.layoutManager.connect('startup-complete', () => {
-                this._initDash();
-                Main.layoutManager.disconnect(this._startupCompleteId);
-                this._startupCompleteId = null;
-            });
-        } else {
-            this._initDash();
-        }
+        this._initDash();
     }
 
     _initDash() {
